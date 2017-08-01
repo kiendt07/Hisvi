@@ -14,7 +14,7 @@ class Api::RegistrationsController < Devise::RegistrationsController
   end
 
   private
-  
+
   def user_params
     params.require(:user).permit User::ATTRIBUTES_PARAMS
   end

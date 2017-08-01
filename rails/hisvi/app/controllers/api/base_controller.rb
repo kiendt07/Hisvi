@@ -5,7 +5,7 @@ class Api::BaseController < ApplicationController::API
   acts_as_token_authentication_handler_for User, fallback: :none
 
   private
-  
+
   alias authentication_user_from_token authenticate_with_token!
 
   def find_varible_name
