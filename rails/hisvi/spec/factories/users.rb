@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :user do
     email { Faker::Internet.email }
     password "password"
+    password_confirmation "password"
     reset_password_token nil
     reset_password_sent_at nil
     remember_created_at nil
