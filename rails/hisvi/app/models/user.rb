@@ -17,6 +17,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :reports, dependent: :destroy
 
+  validates :email, presence: true, length: {maximum: 255},
+    format: {with: VALID_EMAIL_REGEX},
+    uniqueness: {case_sensitive: false}
+
   def follow other_user
     following << other_user
   end

@@ -8,11 +8,8 @@ class Api::RegistrationsController < Devise::RegistrationsController
 
     if user.save
       messages = I18n.t "devise.registrations.signed_up"
-      # byebug
       json_response messages, {user: user}, :created
-      # byebug
     else
-      # byebug
       messages = user.errors.full_messages
       json_response messages, {}, :unprocessable_entity
     end
